@@ -34,10 +34,20 @@ const LandingTemplate = () => {
             }
         }
     }
-    console.log(step)
 
     const handlerBack = () => {
         console.log('back', dataMenu[step.step - 1].stage)
+        if (step.stage !== 0) {
+            setStep((prev) => {
+                return { ...prev, stage: prev.stage - 1 }
+            })
+        } else {
+            if (step.step !== 1) {
+                setStep((prev) => {
+                    return { stage: dataMenu[prev.step - 1 - 1].stage, step: prev.step - 1 }
+                })
+            }
+        }
     }
 
     return (
