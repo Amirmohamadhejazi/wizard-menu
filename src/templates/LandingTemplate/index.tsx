@@ -9,10 +9,10 @@ import { SlSocialYoutube } from 'react-icons/sl'
 type TDataMenu = { name: string; icon: any; stage: number; id: number }
 const LandingTemplate = () => {
     const dataMenu: TDataMenu[] = [
-        { name: 'info', icon: <CiUser />, stage: 3, id: 1 },
-        { name: 'social', icon: <SlSocialYoutube />, stage: 2, id: 2 },
-        { name: 'address', icon: <FaRegAddressCard />, stage: 3, id: 3 },
-        { name: 'ticket', icon: <IoTicketOutline />, stage: 1, id: 4 },
+        { name: 'info', icon: <CiUser />, stage: 1, id: 1 },
+        { name: 'social', icon: <SlSocialYoutube />, stage: 1, id: 2 },
+        { name: 'address', icon: <FaRegAddressCard />, stage: 1, id: 3 },
+        { name: 'ticket', icon: <IoTicketOutline />, stage: 3, id: 4 },
     ]
 
     const [step, setStep] = useState<{
@@ -33,7 +33,7 @@ const LandingTemplate = () => {
                 })
             }
         } else {
-            if (dataMenu.length > step.stage) {
+            if (dataMenu.length >= step.step) {
                 setStep((prev) => {
                     return { ...prev, stage: prev.stage + 1 }
                 })
