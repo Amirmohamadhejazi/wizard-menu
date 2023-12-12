@@ -62,7 +62,7 @@ const LandingTemplate = () => {
                     <div className='flex gap-3 items-center' key={itemsMenu.id}>
                         <div className='flex flex-col items-center'>
                             <div
-                                className={`w-16 h-16 flex items-center justify-center rounded-full  border-4  p-1 duration-500 ${
+                                className={`w-16 h-16 flex items-center justify-center rounded-full  border-8 border-double p-1 duration-500 ${
                                     step.step > itemsMenu.id ||
                                     (step.step === dataMenu.length && step.stage === itemsMenu.stage)
                                         ? 'border-green-800'
@@ -83,7 +83,7 @@ const LandingTemplate = () => {
                             <span>{itemsMenu.name}</span>
                         </div>
                         {dataMenu.length !== itemsMenu.id ? (
-                            <div className='relative bg-[#EAF3FF] rounded-md w-[200px] h-[10px] overflow-hidden'>
+                            <div className='relative bg-[#EAF3FF] border-2 border-gray-600 border-dotted rounded-md w-[200px] h-[15px] overflow-hidden'>
                                 <div
                                     className='h-full absolute right-0 top-0 duration-300'
                                     style={{
